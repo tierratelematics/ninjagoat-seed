@@ -1,7 +1,7 @@
 # Ninjagoat-seed
 
 This is the starting point in a [ninjagoat](https://github.com/tierratelematics/ninjagoat)-powered application.
-By following this simple steps you'll have a frontend with some viewmodels of a fake bank context.
+By following these simple steps you'll have a frontend with some viewmodels of a fake bank context.
 
 ## Installation
 
