@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es5",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ]
+  },
+  "include": [
+    "node_modules/rx/ts/rx.all.d.ts"
+  ]
+}
