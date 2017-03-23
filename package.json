@@ -1,10 +1,10 @@
 {
-  "name": "ng-int-test",
+  "name": "ninjagoat-seed",
   "version": "0.0.1",
   "dependencies": {
+    "@types/lodash": "4.14.54",
     "inversify": "~3.0.0",
     "ninjagoat": "2.0.0",
-    "ninjagoat-dashboard": "0.1.2",
     "ninjagoat-projections": "1.0.0",
     "react": "~15.4.2",
     "react-dom": "~15.4.2",
