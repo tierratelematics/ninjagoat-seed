@@ -1,0 +1,6 @@
+{
+  "socket": {
+    "endpoint": "http://localhost:3000",
+    "path": "/notifications"
+  }
+}
