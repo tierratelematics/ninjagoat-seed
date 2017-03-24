@@ -32,7 +32,7 @@ To automatically update the view with new data you can edit the file events/bank
         id: "8340948HSHS-8483J",
         name: "Unicredit"
     },
-    timestamp: new Date(2)
+    timestamp: new Date(4)
 }
 ```
 
