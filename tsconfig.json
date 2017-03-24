@@ -9,7 +9,8 @@
       "es5",
       "es6",
       "dom"
-    ]
+    ],
+    "types": ["mocha", "reflect-metadata", "node"]
   },
   "include": [
     "node_modules/rx/ts/rx.all.d.ts"

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "@types/lodash": "4.14.54",
+    "@types/node": "~7.0.10",
     "inversify": "~3.0.0",
     "ninjagoat": "~2.0.0",
     "ninjagoat-projections": "~1.0.0",
@@ -12,5 +13,11 @@
     "reflect-metadata": "~0.1.9",
     "rx": "~4.1.0",
     "smild-extra": "~1.1.0"
+  },
+  "devDependencies": {
+    "@types/expect.js": "~0.3.29",
+    "@types/mocha": "~2.2.40",
+    "expect.js": "~0.3.1",
+    "typemoq": "~1.4.1"
   }
 }
