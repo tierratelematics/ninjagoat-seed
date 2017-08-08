@@ -11,8 +11,5 @@
       "dom"
     ],
     "types": ["mocha", "reflect-metadata", "node"]
-  },
-  "include": [
-    "node_modules/rx/ts/rx.all.d.ts"
-  ]
+  }
 }
