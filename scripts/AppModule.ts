@@ -21,7 +21,9 @@ class AppModule implements IModule {
         registry.index(IndexViewModel, () => Observable.empty());
         registry
             .add(AccountsListViewModel, context => modelRetriever.modelFor(context))
-            .add(AccountsViewModel, context => modelRetriever.modelFor(context), ":id")
+            .add(AccountsViewModel, context => modelRetriever.modelFor(context))
+                .withParameters(":id")
+                .notifyBy(parameters => parameters.id)
             .forArea("Accounts");
     }
 
