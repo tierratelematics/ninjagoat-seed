@@ -19,16 +19,16 @@ class AppModule implements IModule {
         let modelRetriever = serviceLocator.get<IModelRetriever>("IModelRetriever");
         registry.master(Screen
             .forViewModel(MasterViewModel)
-            .useController(context => controllerFromObservable(Observable.just({appTitle: "Ninjagoat seed"})))
+            .usingController(context => controllerFromObservable(Observable.just({appTitle: "Ninjagoat seed"})))
         );
         registry.index(Screen
             .forViewModel(IndexViewModel)
-            .useController(() => controllerFromObservable(Observable.empty()))
+            .usingController(() => controllerFromObservable(Observable.empty()))
         );
         registry
-            .add(Screen.forViewModel(AccountsListViewModel).useController(context => modelRetriever.controllerFor(context)))
+            .add(Screen.forViewModel(AccountsListViewModel).usingController(context => modelRetriever.controllerFor(context)))
             .add(Screen.forViewModel(AccountsViewModel)
-                .useController(context => modelRetriever.controllerFor(context, parameters => parameters.id))
+                .usingController(context => modelRetriever.controllerFor(context, parameters => parameters.id))
                 .withParameters(":id"))
             .forArea("Accounts");
     }
