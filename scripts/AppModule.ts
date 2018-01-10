@@ -1,4 +1,4 @@
-import {IModule, IViewModelRegistry, IServiceLocator} from "ninjagoat";
+import {IModule, IViewModelRegistry, IServiceLocator, Screen, controllerFromObservable} from "ninjagoat";
 import {interfaces} from "inversify";
 import {ISocketConfig, IModelRetriever} from "ninjagoat-projections";
 import IndexViewModel from "./viewmodels/IndexViewModel";
@@ -17,13 +17,19 @@ class AppModule implements IModule {
 
     register(registry: IViewModelRegistry, serviceLocator?: IServiceLocator, overrides?: any): void {
         let modelRetriever = serviceLocator.get<IModelRetriever>("IModelRetriever");
-        registry.master(MasterViewModel, () => Observable.just({appTitle: "Ninjagoat seed"}));
-        registry.index(IndexViewModel, () => Observable.empty());
+        registry.master(Screen
+            .forViewModel(MasterViewModel)
+            .usingController(context => controllerFromObservable(Observable.just({appTitle: "Ninjagoat seed"})))
+        );
+        registry.index(Screen
+            .forViewModel(IndexViewModel)
+            .usingController(() => controllerFromObservable(Observable.empty()))
+        );
         registry
-            .add(AccountsListViewModel, context => modelRetriever.modelFor(context))
-            .add(AccountsViewModel, context => modelRetriever.modelFor(context))
-                .withParameters(":id")
-                .notifyBy(parameters => parameters.id)
+            .add(Screen.forViewModel(AccountsListViewModel).usingController(context => modelRetriever.controllerFor(context)))
+            .add(Screen.forViewModel(AccountsViewModel)
+                .usingController(context => modelRetriever.controllerFor(context, parameters => parameters.id))
+                .withParameters(":id"))
             .forArea("Accounts");
     }
 

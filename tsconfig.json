@@ -10,6 +10,6 @@
       "es6",
       "dom"
     ],
-    "types": ["mocha", "reflect-metadata", "node"]
+    "types": ["mocha", "reflect-metadata", "node", "socket.io-client"]
   }
 }
